@@ -1,0 +1,26 @@
+[Unit]
+Description=DNS-over-HTTPS Proxy Service
+After=network.target
+Documentation=https://github.com/White-Whizard/dohproxy.git
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+WorkingDirectory=/opt/dohproxy
+ExecStart=/opt/dohproxy/venv/bin/python /opt/dohproxy/dohproxy.py
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+# Security enhancements
+PrivateTmp=true
+ProtectSystem=full
+NoNewPrivileges=true
+ProtectHome=true
+ProtectControlGroups=true
+ProtectKernelModules=true
+ProtectKernelTunables=true
+
+[Install]
+WantedBy=multi-user.target

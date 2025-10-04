@@ -1,0 +1,8 @@
+listen_host: "127.0.0.1"
+udp_port: 5300
+tcp_port: 5300
+doh_url: "https://dns.digitale-gesellschaft.ch/dns-query"
+timeout: 5
+log_level: "INFO"
+log_format: "%(asctime)s %(levelname)s [%(threadName)s] %(message)s"
+log_file: "/opt/dohproxy/dohproxy.log"
