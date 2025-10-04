@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY dohproxy.py ./
 COPY config.yaml ./
 
-EXPOSE 5353/udp
-EXPOSE 5353/tcp
+EXPOSE 5300/udp
+EXPOSE 5300/tcp
 
 CMD ["python", "dohproxy.py"]
